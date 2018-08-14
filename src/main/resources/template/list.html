@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>yenlx</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+	<link  href="/resources/css/mystyle.css" rel="stylesheet" />
+	
+</head>
+<body>
+	<div
+		style="width: 700px; height =auto; display: block; margin-left: auto; margin-right: auto">
+		<table class="table table-hover table-light"
+		style="text-align: center;">
+			<tr>
+				<th>Id</th>
+				<th>Tên</th>
+				<th>Tuổi</th>
+			</tr>
+			<tr th:each="student : ${listStudent}">
+				<td th:text="${student.id}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.age}"></td>
+				<td>
+                        <a th:href="@{/EditStudent/${student.id}}">Edit</a>
+                        <a th:href="@{/DeleteStudent/__${student.id}__}">Delete</a>
+               	</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
