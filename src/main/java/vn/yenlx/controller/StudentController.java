@@ -25,7 +25,7 @@ public class StudentController {
 		model.addAttribute("listStudent",lstStudent);
 		return "list";
 	}
-	@DeleteMapping("/DeleteStudent/{id}")
+	@GetMapping("/DeleteStudent/{id}")
 	public String deleteStudent(@PathVariable("id") int id ) {
 		studentService.deleteStudent(id);
 		return "list";

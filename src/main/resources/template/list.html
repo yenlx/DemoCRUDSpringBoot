@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-	<link  href="/resources/css/mystyle.css" rel="stylesheet" />
+	<link  href="../static/css/mystyle.css" th:href="@{/css/mystyle.css}" rel="stylesheet" />
 	
 </head>
 <body>
@@ -23,8 +23,8 @@
 				<td th:text="${student.name}"></td>
 				<td th:text="${student.age}"></td>
 				<td>
-                        <a th:href="@{/EditStudent/${student.id}}">Edit</a>
-                        <a th:href="@{/DeleteStudent/__${student.id}__}">Delete</a>
+                        <a th:href="@{/student/EditStudent/${student.id}}">Edit</a>
+                        <a th:href="@{/student/DeleteStudent/__${student.id}__}">Delete</a>
                	</td>
 			</tr>
 		</table>
