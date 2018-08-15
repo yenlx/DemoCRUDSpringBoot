@@ -13,7 +13,7 @@ public class StudentService implements IStudentService {
 
 	@Autowired
 	private StudentDAO studentDAO;
-	
+
 	@Override
 	public List<Student> getAllStudent() {
 		return studentDAO.getAllStudent();
@@ -28,19 +28,24 @@ public class StudentService implements IStudentService {
 	@Override
 	public void addStudent(Student student) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void deleteStudent(int id) {
-		// TODO Auto-generated method stub
-		
+		studentDAO.deleteStudent(id);
 	}
 
 	@Override
 	public void updateSudent(Student student) {
-		// TODO Auto-generated method stub
-		
+		studentDAO.updateSudent(student);
+
 	}
 
+	@Override
+	public Student findOneStudent(int id) {
+		return studentDAO.findOneStudent(id);
+	}
+
+	
 }

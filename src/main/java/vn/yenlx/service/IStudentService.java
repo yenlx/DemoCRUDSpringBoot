@@ -14,4 +14,6 @@ public interface IStudentService {
 	void deleteStudent(int id);
 
 	void updateSudent(Student student);
+	
+	Student findOneStudent(int id);
 }

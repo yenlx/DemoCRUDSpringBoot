@@ -37,14 +37,27 @@ public class StudentDAO implements IStudentDAO {
 
 	@Override
 	public void deleteStudent(int id) {
-		// TODO Auto-generated method stub
-		
+		Student student = entityManager.find(Student.class, id );
+		entityManager.remove(student);
+		flushAndClear();
 	}
 
 	@Override
 	public void updateSudent(Student student) {
-		// TODO Auto-generated method stub
 		
+		entityManager.merge(student);
+;		flushAndClear();
+	}
+	
+	void flushAndClear() {
+	    entityManager.flush();
+	    entityManager.clear();
+	}
+
+	@Override
+	public Student findOneStudent(int id) {
+		Student obj = entityManager.find(Student.class, id);
+		return obj;
 	}
 	
 }

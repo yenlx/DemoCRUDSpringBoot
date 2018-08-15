@@ -11,6 +11,9 @@
 <body>
 	<div
 		style="width: 700px; height =auto; display: block; margin-left: auto; margin-right: auto">
+		<div>
+			<a href="add" >Add Student</a>
+		</div>
 		<table class="table table-hover table-light"
 		style="text-align: center;">
 			<tr>
@@ -23,7 +26,7 @@
 				<td th:text="${student.name}"></td>
 				<td th:text="${student.age}"></td>
 				<td>
-                        <a th:href="@{/student/EditStudent/${student.id}}">Edit</a>
+                        <a th:href="@{/student/edit/__${student.id}__}">Edit</a>
                         <a th:href="@{/student/DeleteStudent/__${student.id}__}">Delete</a>
                	</td>
 			</tr>
